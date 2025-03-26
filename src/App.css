@@ -1,3 +1,537 @@
-h1{
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martian+Mono:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Colors */
+:root {
+  /* Neutral Colors */
+  --neutral-900: #062630;
+  --neutral-700: #385159;
+  --neutral-200: #E6E1DF;
+  --neutral-100: #FAF5F3;
+  --neutral-0: #FFFFFF;
+
+  /* Light Salmon Colors */
+  --light-salmon-500: #FEA36F;
+  --light-salmon-100: #FFE2D1;
+  --light-salmon-50: #FFF5EF;
+
+  /* Gradient Colors (for text and background) */
+  --text-gradient: linear-gradient(107deg, #FF9A60 -11.37%, #062630 61.84%); 
+  --gradient: linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%);
+}
+
+/*Font classes*/
+
+
+/* Text Preset 1 */
+.text-preset-1 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 700; /* Bold */
+  font-size: 62px;
+  line-height: 120%;
+  letter-spacing: -2px;
+}
+
+/* Text Preset 1 (Mobile) */
+@media (max-width: 768px) {
+  .text-preset-1 {
+    font-size: 38px;
+  }
+}
+
+/* Text Preset 2 */
+.text-preset-2 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 600; /* SemiBold */
+  font-size: 50px;
+  line-height: 130%;
+  letter-spacing: -2px;
+}
+
+/* Text Preset 2 (Mobile) */
+@media (max-width: 768px) {
+  .text-preset-2 {
+    font-size: 34px;
+  }
+}
+
+/* Text Preset 3 */
+.text-preset-3 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 600; /* SemiBold */
+  font-size: 34px;
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+/* Text Preset 3 (Mobile) */
+@media (max-width: 768px) {
+  .text-preset-3 {
+    font-size: 24px;
+    line-height: 110%;
+  }
+}
+
+/* Text Preset 4 */
+.text-preset-4 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 600; /* SemiBold */
+  font-size: 24px;
+  line-height: 110%;
+  letter-spacing: -1px;
+}
+
+/* Text Preset 5 (Regular) */
+.text-preset-5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+}
+
+/* Text Preset 5 (SemiBold) */
+.text-preset-5-semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* SemiBold */
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+}
+
+/* Text Preset 6 */
+.text-preset-6 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 600; /* SemiBold */
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+/* Text Preset 6 (Mobile) */
+@media (max-width: 768px) {
+  .text-preset-6 {
+    font-size: 16px;
+  }
+}
+
+/* Text Preset 7 */
+.text-preset-7 {
+  font-family: "Martian Mono", monospace;
+  font-weight: 400; /* Regular */
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -1
+}
+
+/*default*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,h2 {
+  color: var(--neutral-900)
+}
+
+p{
+  color: var(--neutral-700)
+}
+
+/*App*/
+
+
+
+/*Header / Hero-section */
+
+#header-container{
+  width: 100%;
+  background-color: var(--neutral-100);
+  background-image: url("./assets/pattern-light-bg.svg");
+  background-repeat: repeat;
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+.pattern-glow{
+  z-index: 0;
+  position: absolute;
+  right: -400px;
+  bottom: -400px;
+}
+
+#header{
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 80px;
+  padding-inline: 135px;
+
+}
+
+#logo{
+  width: 193px;
+  height: auto;
+  margin-bottom: 80px;
+}
+
+#header-hero{
+  display: flex;
+  align-items: center;
+  gap: 64px;
+
+}
+
+#header-hero > img{
+  width: 540px;
+  height: auto;
+  border-radius: 12px;
+}
+
+#header-hero-txt{
+  display: flex;
+  flex-direction: column;
+}
+
+#header-hero-txt h1{
+  background: linear-gradient(107deg, #FF9A60 -11.37%, #062630 61.84%); 
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 24px;
+}
+
+#header-hero-txt > p{
+  color: var(--neutral-700);
+  margin-bottom: 32px;
+}
+
+
+/*Review Membership*/
+
+
+.membership-btn{
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--neutral-900);
+  background-color: var(--light-salmon-50);
+  color: var(--neutral-900)
+}
+
+.membership-btn:hover{
+  cursor: pointer;
+  background: var(--gradient);
+}
+
+.membership-btn:focus{
+  outline: 2px solid var(--neutral-700);
+  outline-offset: 2px;
+}
+
+.membership-btn img{
+  width: 16px;
+  height: 16px;
+}
+
+.review-membership-under{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.review-membership-under img{
+  width: 110px;
+  height: 40px;
+}
+
+.review-membership-text{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--neutral-700)
+}
+
+.stars{
+  display: flex;
+}
+
+.stars img{
+  width: 24px;
+  height: 24px;
+}
+
+/*Content*/
+
+#content-container{
+  width: 100%;
+  background-color: var(--neutral-0);
+}
+
+#content{
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 120px;
+  margin: auto;
+  align-items: center;
+  padding-block: 120px;
+  padding-inline: 135px;
+}
+
+/*Slides*/
+
+#first-slide, #second-slide{
+  display: flex;
+  column-gap: 80px;
+  align-items: center;
+}
+
+#first-slide > img, #second-slide > img{
+  width: 560px;
+  height: 520px;
+  border-radius: 12px;
+}
+
+.slide-text{
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.slide-text h1{
+  color: var(--neutral-900);
+}
+
+.slide-text p{
+  color: var(--neutral-700);
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.list-element{
+  display: flex;
+  gap: 14px;
+
+}
+
+.list-elements img{
+  width: 24px;
+  height: 24px;
+}
+
+.list-elements p{
+  color: var(--neutral-700);
+}
+
+/*Second Slide specific*/
+
+#second-slide{
+  position: relative;
+}
+
+/*Third Slide*/
+
+#third-slide{
+  background-image: url("./assets/pattern-light-bg.svg");
+  background-repeat: repeat;
+  background-color: var(--neutral-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 64px;
+  padding: 80px;
+  border-radius: 12px;
+}
+
+#third-slide h1{
+  color: var(--neutral-900);
+  text-align: center;
+}
+
+#membership-tier{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.step{
+  height: 110px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.step-number{
+  border: 2px solid var(--neutral-900);
+  border-radius: 4px;
+  color: var(--neutral-900);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding-block: 8px;
+}
+
+.step-description{
+  color: var(--neutral-900)
+}
+
+
+.step img{
+  position: absolute;
+  right:0px;
+  top: 0px;
+}
+
+
+/* Fourth Slide*/
+
+#fourth-slide{
+
+  width: 100%;
+  max-width: 970px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#fourth-slide h1{
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+
+#membership-options{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.membership{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid var(--neutral-200);
+}
+
+.membership h2{
+  margin-bottom: 24px;
+}
+
+.membership hr{
+  border: none;
+  border-top: 1px solid var(--neutral-200);
+  margin-block: 24px;
+}
+
+.membership p span{
+  color: var(--neutral-900)
+}
+
+.membership .list-element:first-of-type {
+  margin-bottom: 16px;
+}
+
+.membership .membership-btn{
+  margin-top: 32px;
+  margin-bottom: 0px;
+}
+
+.pro{
+  background-color: var(--neutral-100);
+  flex: 1.3;
+  height: 390px;
+  position: relative;
+  overflow: hidden;
+  background-image: url(./assets/pattern-glow.svg);
+}
+
+
+/*Fifth-slide*/
+
+
+#fifth-slide{
+  width: 100%;
+  max-width: 970px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+#fifth-slide h1{
+  text-align: center;
+}
+
+/* Footer */
+
+#footer-container{
+  width: 100%;
+  background-color: var(--neutral-900);
+  background-image: url("./assets/pattern-light-bg.svg");
+  background-repeat: repeat;
+  padding-top: 80px;
+}
+
+#footer{
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 135px;
+  margin: auto;
+
+}
+
+#footer h1{
+  color: var(--neutral-100);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#footer hr{
+  margin-top: 64px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--neutral-700);
+}
+
+#footer-credits{
+  width: 100%;
+  margin-block: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer-credits p{
+  color: var(--neutral-0);
+}
+
+#socials{
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+#socials img{
+  width: 22px;
+  height: 22px;
 }
